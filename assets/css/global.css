@@ -1,0 +1,131 @@
+/* ================================================================== */
+/* 1. ESTILOS GLOBAIS E RESET                                         */
+/* ================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #011526;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: #00A9E0;
+    text-decoration: none;
+}
+
+/* ================================================================== */
+/* 2. ESTILOS DO HEADER                                               */
+/* ================================================================== */
+.header {
+    display: flex; /* Mudança: Controlaremos a visibilidade por página */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.header .logo-container { display: flex; align-items: center; gap: 15px; }
+.header .logo-container a { text-decoration: none; }
+.header .logo-container .icon { width: 60px; }
+.header .caption { font-family: 'Archivo Black', sans-serif; font-size: 22px; color: white; font-weight: bold; line-height: 1.1; }
+.header .menu { display: flex; align-items: center; gap: 25px; }
+.header .menu a { color: white; text-decoration: none; font-weight: bold; font-size: 20px; transition: color 0.3s; }
+.header .menu a:hover { color: #00A9E0; }
+.header .menu .icon { width: 40px; height: 40px; vertical-align: middle; }
+
+/* ================================================================== */
+/* 4. ESTILOS GERAIS DE AUTENTICAÇÃO                                  */
+/* ================================================================== */
+/* Wrapper para telas de auth, controla o fundo e centralização */
+.view-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(rgba(1, 21, 38, 0.8), rgba(1, 21, 38, 0.8)), url('../images/home-background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* Container branco central das telas de auth */
+.auth-container {
+    display: flex;
+    width: 100%;
+    max-width: 1020px;
+    min-height: 640px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+.auth-container .left-panel { flex: 1; padding: 40px 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.auth-container .logo-auth { font-family: 'Archivo Black', sans-serif; font-size: 28px; color: #003049; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; gap: 10px; }
+.auth-container .logo-auth img { width: 40px; height: 40px; }
+.auth-container .logo-auth h2 { font-family: 'Archivo Black'; color: #003049; font-size: 28px; }
+.auth-container p { font-size: 15px; margin-bottom: 20px; color: #333; }
+.auth-container form { width: 100%; max-width: 300px; text-align: center; }
+.auth-container .input-field { position: relative; margin-bottom: 18px; width: 100%; }
+.auth-container .input-field input { width: 100%; padding: 14px 18px; border: 1px solid #ccc; border-radius: 30px; font-size: 14px; }
+.auth-container .forgot { font-size: 13px; color: #555; text-decoration: none; margin-bottom: 25px; display: inline-block; }
+.auth-container button { padding: 14px; width: 100%; background-color: #00A9E0; border: none; color: #FFF; font-weight: bold; border-radius: 30px; font-size: 15px; cursor: pointer; transition: background-color 0.3s; }
+.auth-container button:hover { background-color: #008fbf; }
+.auth-container .register, .auth-container .terms { margin-top: 20px; font-size: 14px; color: #333; }
+.auth-container .register a, .auth-container .terms a { color: #00A9E0; text-decoration: none; font-weight: 500; }
+.auth-container .right-panel { flex: 1; display: block; }
+.auth-container .right-panel img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 768px) {
+    .auth-container .right-panel { display: none; }
+}
+
+/* ================================================================== */
+/* 5. BOTÃO FIXO PARA VOLTAR PARA HOME                                */
+/* ================================================================== */
+.back-to-home {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.back-to-home:hover {
+    background-color: rgba(18, 84, 150, 0.8);
+}
+.back-to-home img {
+    width: 42px;
+    height: 42px;
+}
+
+/* ================================================================== */
+/* 6. AJUSTE FINO PARA RÓTULOS DE FORMULÁRIO                          */
+/* ================================================================== */
+.auth-container form p {
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 5px; /* Menor que o padrão */
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}

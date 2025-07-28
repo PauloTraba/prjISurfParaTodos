@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURF PARA TODOS - Cadastro de Aluno</title>
+    
+    <link rel="stylesheet" href="./cadastro-aluno.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="../dashboard/index.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    </li>
+
+                    <li class="accordion open" data-menu="alunos">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-user-friends"></i> Alunos <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="active"><a href="./cadastro-aluno.html">Cadastrar</a></li>
+                            <li><a href="../alunos-ativos/alunos-ativos.html">Ativos</a></li>
+                            <li><a href="../alunos-inativos/alunos-inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="accordion" data-menu="voluntarios">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-hands-helping"></i> Voluntários <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro-voluntario/cadastro-voluntario.html">Cadastrar</a></li>
+                            <li><a href="../voluntarios-ativos/voluntarios-ativos.html">Ativos</a></li>
+                            <li><a href="../voluntarios-inativos/voluntarios-inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../turmas/turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a>
+                    </li>
+                  
+                    <li>
+                        <a href="../relatorios/relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="logout">
+                <a href="../login/index.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="welcome-message">
+                    <h2>Bem-vindo, usuário</h2>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-text">
+                        <span>Gerente de cadastros</span>
+                        <span class="time-info">4:45 pm 21 fev 2025</span>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Admin Avatar">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="content">
+                <div class="content-header">
+                    <div class="title-section">
+                        <a href="../alunos-ativos/alunos-ativos.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+                        <h3>Cadastro de Aluno</h3>
+                    </div>
+                </div>
+                
+                <div class="form-tabs">
+                    <button class="tab-btn active" data-tab="info-pessoal">Informações Pessoais</button>
+                    <button class="tab-btn" data-tab="info-medica">Informações Médicas</button>
+                    <button class="tab-btn" data-tab="info-contato">Informações de Contato</button>
+                </div>
+                
+                <div class="form-container">
+                    <form id="student-form">
+                        <div class="tab-content active" id="info-pessoal">
+                            <h3 class="section-title">Dados Pessoais</h3>
+                            
+                            <div class="image-upload-section">
+                                <div class="image-upload-container">
+                                    <img id="profile-preview" src="" alt="Foto do Aluno">
+                                    <div class="upload-buttons">
+                                        <button type="button" class="upload-btn" disabled><i class="fas fa-upload"></i> Upload</button>
+                                        <button type="button" class="delete-btn" disabled><i class="fas fa-trash"></i></button>
+                                    </div>
+                                    <input type="file" id="profile-upload" hidden>
+                                </div>
+                                <div class="image-instructions">
+                                    <p>Tamanho máximo do arquivo: <strong>5MB</strong></p>
+                                    <p>Formatos aceitos: <strong>JPG, PNG</strong></p>
+                                    <p style="color: #f59e0b;">(Upload de imagem desabilitado por enquanto)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="registerName">Nome completo*</label>
+                                    <input type="text" id="registerName" name="registerName" placeholder="Digite o nome completo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="socialName">Nome social</label>
+                                    <input type="text" id="socialName" name="socialName" placeholder="Digite o nome social (opcional)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthDate">Data de nascimento*</label>
+                                    <input type="date" id="birthDate" name="birthDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gênero</label>
+                                    <select id="gender" name="gender">
+                                        <option value="" selected disabled>Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                        <option value="outro">Outro</option>
+                                        <option value="prefiro-nao-informar">Prefiro não informar</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="race">Cor/Raça</label>
+                                    <select id="race" name="race">
+                                        <option value="" selected disabled>Selecione</option>
+                                        <option value="branca">Branca</option>
+                                        <option value="preta">Preta</option>
+                                        <option value="parda">Parda</option>
+                                        <option value="amarela">Amarela</option>
+                                        <option value="indigena">Indígena</option>
+                                        <option value="nao-declarar">Prefiro não declarar</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="schooling">Escolaridade</label>
+                                    <select id="schooling" name="schooling">
+                                        <option value="" selected disabled>Selecione</option>
+                                        <option value="INFANTIL">Educação Infantil</option>
+                                        <option value="FUNDAMENTAL">Ensino Fundamental</option>
+                                        <option value="MEDIO">Ensino Médio</option>
+                                        <option value="SUPERIOR">Ensino Superior</option>
+                                        <option value="NAO_SE_APLICA">Não se aplica</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userRole">Tipo de usuário*</label>
+                                    <select id="userRoleSelect" name="userRoleSelect" disabled>
+                                        <option value="ALUNO" selected>Aluno</option>
+                                    </select>
+                                    <input type="hidden" name="userRole" value="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="guardianName">Nome do responsável</label>
+                                    <input type="text" id="guardianName" name="guardianName" placeholder="Nome do responsável legal">
+                                </div>
+                                <div class="form-group">
+                                    <label for="guardianRelationship">Relação com o aluno</label>
+                                    <input type="text" id="guardianRelationship" name="guardianRelationship" placeholder="Ex: mãe, pai, tio...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="guardianPhone">Telefone do responsável</label>
+                                    <input type="text" id="guardianPhone" name="guardianPhone" placeholder="(00) 00000-0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefone do aluno</label>
+                                    <input type="text" id="phone" name="phone" placeholder="(00) 00000-0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="email@exemplo.com">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="save-btn">
+                                    <i class="fas fa-save"></i> Salvar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="info-medica">
+                            <h3 class="section-title">Informações Médicas</h3>
+                            <p>Esta seção será desenvolvida no futuro.</p>
+                        </div>
+
+                        <div class="tab-content" id="info-contato">
+                            <h3 class="section-title">Informações de Contato</h3>
+                            <p>Esta seção será desenvolvida no futuro.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../dashboard/dashboard_global.js"></script>
+    <script src="./cadastro-aluno.js"></script>
+</body>
+
+</html>

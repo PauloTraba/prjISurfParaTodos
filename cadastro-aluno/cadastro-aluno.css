@@ -1,0 +1,525 @@
+/* ================================================================== */
+/* Estilos Completos para a Página de Cadastro de Aluno               */
+/* Versão com Sidebar Padronizada                                     */
+/* ================================================================== */
+
+/* --- Estilos Gerais e Reset (Padrão da Dashboard) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --primary-color: #3498db;
+    --sidebar-bg: #ffffff;
+    --main-bg: #f5f8fa;
+    --text-dark: #333333;
+    --text-medium: #555555;
+    --text-light: #888888;
+    --border-color: #e0e0e0;
+    --active-color: #6366f1;
+    --inactive-color: #9ca3af;
+    --btn-primary: #6366f1;
+    --btn-hover: #4f46e5;
+    --btn-cancel: #f3f4f6;
+    --btn-cancel-text: #6b7280;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --input-bg: #ffffff;
+    --input-border: #d1d5db;
+    --input-focus: #6366f1;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================================================================== */
+/* 2. Estilos da Barra Lateral (Sidebar) - PADRÃO DA DASHBOARD        */
+/* ================================================================== */
+/* --- Estilos da Barra Lateral (Sidebar) - PADRÃO DA DASHBOARD --- */
+.sidebar {
+    width: 240px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    padding: 20px 0;
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+}
+
+.logo-container {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-text {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    flex: 1;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin: 8px 0;
+}
+
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-medium);
+    text-decoration: none;
+    font-size: 14px;
+    border-left: 3px solid transparent;
+}
+
+.nav-menu li a:hover {
+    color: var(--active-color);
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+.nav-menu li a i {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.nav-menu li.open > a,
+.nav-menu ul li .sub-menu li.active a {
+    color: var(--active-color);
+    font-weight: 500;
+}
+
+.nav-menu ul li.accordion.active > a { /* Mantém o menu pai ativo */
+    color: var(--active-color);
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+.logout {
+    padding: 20px;
+    margin-top: auto;
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+    color: var(--text-medium);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logout a i {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.nav-menu ul li .sub-menu {
+    list-style: none;
+    padding-left: 48px;
+    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+}
+
+.nav-menu ul li.open .sub-menu {
+    display: flex;
+}
+
+/* ================================================================== */
+/* 3. Estilos do Conteúdo Específico da Página de Cadastro            */
+/* ================================================================== */
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.welcome-message h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.admin-text span {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.admin-text .time-info {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.admin-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Content Area */
+.content {
+  padding: 20px 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Content Header */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--btn-cancel);
+  color: var(--text-medium);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #e5e7eb;
+}
+
+.form-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 25px;
+    overflow-x: auto; /* Para responsividade em telas pequenas */
+}
+
+.tab-btn {
+    padding: 15px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-medium);
+    position: relative;
+    white-space: nowrap; /* Previne quebra de texto nos botões */
+}
+
+.tab-btn.active {
+    color: var(--active-color);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--active-color);
+}
+
+.tab-btn:hover {
+    color: var(--active-color);
+}
+
+.form-container {
+    padding: 25px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.image-upload-section {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.image-upload-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--border-color);
+    display: block; 
+    background-color: #f0f2f5; 
+}
+
+.upload-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.upload-btn, .delete-btn {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.upload-btn i, .delete-btn i {
+    margin-right: 5px;
+}
+
+.delete-btn {
+    color: var(--error-color);
+}
+
+.image-instructions p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select {
+    padding: 10px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.save-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--btn-primary);
+    color: white;
+    border: none;
+}
+
+.save-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Feedback Message */
+.feedback-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    z-index: 9999;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.feedback-message.success {
+    background-color: #22c55e;
+}
+
+.feedback-message.error {
+    background-color: #ef4444;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .logo-text, .nav-menu li a span, .logout-btn a span {
+        display: none;
+    }
+    
+    .nav-menu li a, .logout-btn a {
+        justify-content: center;
+    }
+    
+    .nav-menu li a i, .logout-btn a i {
+        margin-right: 0;
+    }
+    
+    .main-content {
+        margin-left: 80px;
+        padding: 20px 15px;
+    }
+    
+    .form-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .admin-info {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .image-upload-section {
+        flex-direction: column;
+    }
+    
+    .image-upload-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .save-btn {
+        width: 100%;
+    }
+}
